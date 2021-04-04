@@ -1,0 +1,7 @@
+{
+    "verbose": true,
+    "watch": [
+        "src/**/*.ts"
+    ],
+    "exec": "TS_NODE_PROJECT=tsconfig.server.json node --inspect --require ts-node/register ./src/server/server.ts"
+}
