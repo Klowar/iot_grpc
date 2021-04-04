@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "build",
+        "allowJs": true,
+        "resolveJsonModule": true
+    },
+    "exclude": [
+        "node_modules/*",
+        "src/client/**/*"
+    ],
+    "include": [
+        "src/**/*"
+    ]
+}

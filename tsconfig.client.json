@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "build",
+        "allowJs": true
+    },
+    "exclude": [
+        "node_modules/*",
+        "src/server/**/*"
+    ],
+    "include": [
+        "src/**/*"
+    ]
+}
