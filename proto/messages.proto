@@ -1,0 +1,49 @@
+
+syntax = "proto3";
+
+package grpc.iot.temperature;
+
+option objc_class_prefix = "TMP";
+
+// Record.
+message TemperatureRecord {
+
+  int32 id = 1;
+  int32 deviceid = 2;
+
+  float value = 3;
+
+  string time = 4;
+
+}
+
+
+
+// Request.
+message GetByIdRequest {
+  int32 id = 1;
+}
+
+message GetAllByDeviceIdRequest {
+  int32 deviceid = 1;
+}
+
+message SaveRequest {
+  TemperatureRecord record = 1;
+}
+
+message TemperatureRecordResponse {
+  TemperatureRecord record = 1;
+}
+
+// Service.
+service TemperatureService{
+  rpc GetRecordById (GetByIdRequest) returns (TemperatureRecordResponse);
+  rpc GetAllByDeviceId(GetAllByDeviceIdRequest) returns (stream TemperatureRecordResponse);
+  rpc Save (SaveRequest) returns (TemperatureRecordResponse);
+  rpc SaveAll (stream SaveRequest) returns (stream TemperatureRecordResponse);
+}
+
+
+
+
